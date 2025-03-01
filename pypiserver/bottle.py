@@ -14,7 +14,7 @@ License: MIT (see LICENSE for details)
 """
 
 from __future__ import print_function
- import os
+import os
 import sys
 
 __author__ = 'Marcel Hellkamp'
