@@ -14,10 +14,11 @@ License: MIT (see LICENSE for details)
 """
 
 from __future__ import print_function
+ import os
 import sys
 
 __author__ = 'Marcel Hellkamp'
-__version__ = '0.14-dev'
+__version__ = '0.14-dev-patched'
 __license__ = 'MIT'
 
 ###############################################################################
@@ -1144,7 +1145,7 @@ class BaseRequest(object):
     __slots__ = ('environ', )
 
     #: Maximum size of memory buffer for :attr:`body` in bytes.
-    MEMFILE_MAX = 102400
+    MEMFILE_MAX = os.getenv('MEMFILE_MAX', 102400)
 
     def __init__(self, environ=None):
         """ Wrap a WSGI environ dictionary. """
